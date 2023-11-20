@@ -22,6 +22,12 @@ function App() {
     }
 
     startFetching();
+
+
+    const intervalId = setInterval(startFetching, 5000);
+
+    return () => clearInterval(intervalId);
+
   }, []);
 
   function handleActivity(newActivity) {
@@ -41,12 +47,11 @@ function App() {
     )
   }
 
+
   return (
     <>
       <h1>
-        {isGoodWeather.isGoodWeather
-          ? `${isGoodWeather.condition} ${isGoodWeather.temperature}`
-          : "loading Weather"}
+        {isGoodWeather.condition} {isGoodWeather.temperature}
       </h1>
       <List filteredList={filteredList} isGoodWeather={isGoodWeather} onDeleteActivity={handleDeleteActivity}>
         {" "}
