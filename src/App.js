@@ -33,6 +33,14 @@ function App() {
     return activity.isForGoodWeather === isGoodWeather.isGoodWeather;
   });
 
+  function handleDeleteActivity(id) {
+    setActivities(
+      activities.filter((activity) => {
+        return activity.id !== id;
+      })
+    )
+  }
+
   return (
     <>
       <h1>
@@ -40,7 +48,7 @@ function App() {
           ? `${isGoodWeather.condition} ${isGoodWeather.temperature}`
           : "loading Weather"}
       </h1>
-      <List filteredList={filteredList} isGoodWeather={isGoodWeather}>
+      <List filteredList={filteredList} isGoodWeather={isGoodWeather} onDeleteActivity={handleDeleteActivity}>
         {" "}
       </List>
       <Form onAddActivity={handleActivity}> </Form>
