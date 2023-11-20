@@ -1,8 +1,13 @@
-export function List({ activities }) {
+export function List({ filteredList, isGoodWeather }) {
   return (
     <>
+      {isGoodWeather ?
+        (<h1>The weather is awesome! Go outside and:</h1>)
+        :
+        (<h1>Bad weather outside! Here is what you can do now.</h1>)
+      }
       <ul>
-        {activities.map((activity) => {
+        {filteredList.map((activity) => {
           return <li key={activity.id}>{activity.name}</li>;
         })}
       </ul>
