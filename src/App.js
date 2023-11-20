@@ -18,16 +18,11 @@ function App() {
       );
       const weather = await response.json();
       setIsGoodWeather(weather);
-      console.log(weather);
     }
 
     startFetching();
-
-
     const intervalId = setInterval(startFetching, 5000);
-
     return () => clearInterval(intervalId);
-
   }, []);
 
   function handleActivity(newActivity) {
@@ -44,16 +39,19 @@ function App() {
       activities.filter((activity) => {
         return activity.id !== id;
       })
-    )
+    );
   }
-
 
   return (
     <>
       <h1>
         {isGoodWeather.condition} {isGoodWeather.temperature}
       </h1>
-      <List filteredList={filteredList} isGoodWeather={isGoodWeather} onDeleteActivity={handleDeleteActivity}>
+      <List
+        filteredList={filteredList}
+        isGoodWeather={isGoodWeather}
+        onDeleteActivity={handleDeleteActivity}
+      >
         {" "}
       </List>
       <Form onAddActivity={handleActivity}> </Form>
