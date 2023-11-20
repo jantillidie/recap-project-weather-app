@@ -12,7 +12,11 @@ export function Form({ onAddActivity }) {
       isForGoodWeather: event.target.elements.checkboxWeather.checked,
       ...data,
     };
+
+    //Das neue Objekt wird als Argument in die Funktion handleActivity() aus der Main übergeben. Diese Funktion wurde unter der Prop "onAddActivity" in die List.js hereingegben. Stichwort "State uplifting"
     onAddActivity(newData);
+
+    //Löschend er Eingabe und fokussieren des Eingabefeldes
     event.target.reset();
     event.target.elements.name.focus();
   }
