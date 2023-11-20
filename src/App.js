@@ -8,7 +8,6 @@ function App() {
   function handleActivity(newActivity) {
     const updatetActivity = [{ id: uid(), ...newActivity }, ...activities];
     setActivities(updatetActivity);
-    console.log(updatetActivity);
   }
   return (
     <Form onAddActivity={handleActivity}></Form>

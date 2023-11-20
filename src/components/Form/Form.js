@@ -4,8 +4,8 @@ export function Form({ onAddActivity }) {
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    onAddActivity(data);
-    console.log(data);
+    const newData = { isForGoodWeather: event.target.elements.checkboxWeather.checked, ...data };
+    onAddActivity(newData);
     event.target.reset();
     event.target.elements.name.focus();
   }
@@ -15,7 +15,7 @@ export function Form({ onAddActivity }) {
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" name="name"></input>
         <label htmlFor="checkbox-weather">Good-weather activity:</label>
-        <input type="checkbox" id="checkbox-weather" name="checkbox-weather"></input>
+        <input type="checkbox" id="checkbox-weather" name="checkboxWeather"></input>
         <button id="submit-button">Submit</button>
       </form>
     </>
