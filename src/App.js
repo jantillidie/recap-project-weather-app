@@ -3,12 +3,26 @@ import { Form } from "./components/Form/Form";
 import { uid } from "uid";
 import { List } from "./components/List/List.js";
 import useLocalStorageState from "use-local-storage-state";
+import { useEffect, useState } from "react";
 
 function App() {
-  const isGoodWeather = true;
+  const [isGoodWeather, setIsGoodWeather] = useState(0);
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: [],
   });
+
+  useEffect(() => {
+    async function startFetching() {
+      const response = await fetch(
+        "https://example-apis.vercel.app/api/weather/europe"
+      );
+      const weather = await response.json();
+      setIsGoodWeather(weather);
+      console.log(weather);
+    }
+
+    startFetching();
+  }, []);
 
   function handleActivity(newActivity) {
     const updatetActivity = [{ id: uid(), ...newActivity }, ...activities];
@@ -16,12 +30,19 @@ function App() {
   }
 
   const filteredList = activities.filter((activity) => {
-    return activity.isForGoodWeather === isGoodWeather;
-  })
+    return activity.isForGoodWeather === isGoodWeather.isGoodWeather;
+  });
 
   return (
     <>
-      <List filteredList={filteredList} isGoodWeather={isGoodWeather}> </List>
+      <h1>
+        {isGoodWeather.isGoodWeather
+          ? `${isGoodWeather.condition} ${isGoodWeather.temperature}`
+          : "loading Weather"}
+      </h1>
+      <List filteredList={filteredList} isGoodWeather={isGoodWeather}>
+        {" "}
+      </List>
       <Form onAddActivity={handleActivity}> </Form>
     </>
   );
