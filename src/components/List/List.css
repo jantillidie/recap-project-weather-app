@@ -1,0 +1,30 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  border: 1px solid grey; /* Fügt einen 1 Pixel breiten Rahmen mit einer Farbe hinzu */
+  border-radius: 8px; /* Verleiht den Ecken einen runden Rand */
+  margin: 10px 0; /* Fügt etwas Abstand zwischen den Listenelementen hinzu */
+  padding: 15px; /* Fügt Innenabstand zum Inhalt der Listenelemente hinzu */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Fügt einen leichten Schatten hinzu */
+  background-color: grey;
+}
+
+.button-delete {
+  background-color: #ff4444; /* Rote Hintergrundfarbe */
+  color: #fff; /* Weiße Textfarbe */
+  padding: 8px 16px; /* Innenabstand oben/unten und links/rechts */
+  border: none; /* Kein Rahmen */
+  border-radius: 4px; /* Abgerundete Ecken */
+  cursor: pointer; /* Zeiger-Cursor bei Hover */
+  transition: background-color 0.3s ease; /* Sanfte Übergangsanimation für die Hintergrundfarbe */
+
+  /* Optional: Schatten für einen erhabenen Effekt */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-left: 10px;
+}
+
+.button-delete:hover {
+  background-color: #cc0000;
+}

@@ -44,17 +44,22 @@ function App() {
 
   return (
     <>
-      <h1>
-        {isGoodWeather.condition} {isGoodWeather.temperature}
-      </h1>
-      <List
-        filteredList={filteredList}
-        isGoodWeather={isGoodWeather}
-        onDeleteActivity={handleDeleteActivity}
-      >
-        {" "}
-      </List>
-      <Form onAddActivity={handleActivity}> </Form>
+      <header className="weather-header">
+        <h1 className="weather-title">
+          {isGoodWeather.condition} {isGoodWeather.temperature}°C
+        </h1>
+      </header>
+      <main>
+        <List
+          filteredList={filteredList}
+          isGoodWeather={isGoodWeather}
+          onDeleteActivity={handleDeleteActivity}
+          className="List-component"
+        >
+          {" "}
+        </List>
+        <Form onAddActivity={handleActivity}> </Form>
+      </main>
     </>
   );
 }
