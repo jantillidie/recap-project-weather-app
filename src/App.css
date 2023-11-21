@@ -27,3 +27,10 @@ h2 {
 
 .weather-title {
 }
+
+hr {
+  border: 0; /* Entfernt die standardmäßige Rahmenlinie */
+  height: 1px; /* Setzt die Höhe der horizontalen Linie */
+  background-color: #ccc; /* Farbe der horizontalen Linie */
+  margin: 20px 0; /* Abstand über und unter der horizontalen Linie */
+}

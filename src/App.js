@@ -54,10 +54,10 @@ function App() {
           filteredList={filteredList}
           isGoodWeather={isGoodWeather}
           onDeleteActivity={handleDeleteActivity}
-          className="List-component"
         >
           {" "}
         </List>
+        <hr />
         <Form onAddActivity={handleActivity}> </Form>
       </main>
     </>
