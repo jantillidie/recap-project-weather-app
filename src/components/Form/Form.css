@@ -23,7 +23,15 @@
 }
 
 /* Eingabefeld-Stile */
-.activity-form input[type="text"],
+.activity-form input[type="text"] {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  vertical-align: middle; /* Neu hinzugefügt: Zentriert die Checkbox vertikal */
+}
+
 .activity-form input[type="checkbox"] {
   width: 100%;
   padding: 10px;
@@ -31,6 +39,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  vertical-align: middle; /* Neu hinzugefügt: Zentriert die Checkbox vertikal */
 }
 
 /* Button-Stile */
@@ -45,4 +54,12 @@
 
 .activity-form button:hover {
   background-color: #45a049;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 16px;
 }
